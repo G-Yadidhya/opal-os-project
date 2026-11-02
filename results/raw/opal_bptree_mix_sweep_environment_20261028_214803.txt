@@ -1,0 +1,29 @@
+timestamp_local=2026-10-28 21:48:03 IST
+timestamp_utc=2026-10-28 16:18:03 UTC
+operating_system=PRETTY_NAME=Ubuntu 24.04.4 LTS;NAME=Ubuntu;VERSION=24.04.4 LTS (Noble Numbat)
+kernel=Linux 7.0.0-34-generic x86_64 GNU/Linux
+cpu_details:
+Architecture=x86_64
+Vendor ID=GenuineIntel
+Model name=Intel(R) Core(TM) i7-14700
+CPU family=6
+Model=183
+Thread(s) per core=2
+Core(s) per socket=20
+Socket(s)=1
+CPU max MHz=5400.0000
+CPU min MHz=800.0000
+logical_cpu_count=28
+compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+compiler_flags=-std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -pthread -Iinclude
+threads=4
+operations_per_thread=10000
+total_operations=40000
+workload_mixes=read_heavy:80/15/5; balanced:50/40/10; update_heavy:20/70/10 (lookup/update/insert percent)
+strategies=single pthread mutex for all operations; OPAL-inspired C11 prototype with optimistic lookups, function-pointer update batching, MCS-serialized insert/split path
+warm_up_policy=one run per strategy per workload, excluded from CSV
+measured_runs_per_strategy_per_workload=5
+pair_order=mutex_then_opal; opal_then_mutex; mutex_then_opal; opal_then_mutex; mutex_then_opal (repeated within each workload)
+timer_scope=tree initialization excluded; timer includes worker creation and join; post-run verification excluded
+limitations=local C11 teaching adaptation, not upstream OPAL; single global version and MCS writer queue; no deletes, reclamation, range scan, NUMA, or PiBench integration
+script=benchmarks/run_opal_bptree_mix_sweep.sh

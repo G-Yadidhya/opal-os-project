@@ -1,0 +1,27 @@
+timestamp_local=2026-10-28 22:57:13 IST
+timestamp_utc=2026-10-28 17:27:13 UTC
+operating_system=PRETTY_NAME=Ubuntu 24.04.4 LTS;NAME=Ubuntu;VERSION=24.04.4 LTS (Noble Numbat)
+kernel=Linux 7.0.0-34-generic x86_64 GNU/Linux
+cpu_details:
+Architecture=x86_64
+Vendor ID=GenuineIntel
+Model name=Intel(R) Core(TM) i7-14700
+CPU family=6
+Model=183
+Thread(s) per core=2
+Core(s) per socket=20
+Socket(s)=1
+CPU max MHz=5400.0000
+CPU min MHz=800.0000
+logical_cpu_count=28
+compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+compiler_flags=-std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -pthread -Iinclude
+workload=balanced 50/40/10 lookup/update/insert; 4 threads; 10000 operations/thread
+policy_immediate=existing OPAL-inspired combiner, drains immediately
+policy_collect1us=separate experiment clone, waits up to 1000ns before each queued batch detach
+warm_up_policy=one run per policy; excluded from CSV
+measured_pairs=5
+pair_order=immediate_then_collect1us; collect1us_then_immediate, alternating
+latency_scope=clock_gettime around each update call; instrumentation applies equally to both policies
+timer_scope=tree initialization excluded; worker creation/join included; validation excluded
+script=benchmarks/run_opal_bptree_batch_policy_comparison.sh

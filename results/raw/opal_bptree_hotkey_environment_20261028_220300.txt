@@ -1,0 +1,27 @@
+timestamp_local=2026-10-28 22:03:00 IST
+timestamp_utc=2026-10-28 16:33:00 UTC
+operating_system=PRETTY_NAME=Ubuntu 24.04.4 LTS;NAME=Ubuntu;VERSION=24.04.4 LTS (Noble Numbat)
+kernel=Linux 7.0.0-34-generic x86_64 GNU/Linux
+cpu_details:
+Architecture=x86_64
+Vendor ID=GenuineIntel
+Model name=Intel(R) Core(TM) i7-14700
+CPU family=6
+Model=183
+Thread(s) per core=2
+Core(s) per socket=20
+Socket(s)=1
+CPU max MHz=5400.0000
+CPU min MHz=800.0000
+logical_cpu_count=28
+compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+compiler_flags=-std=c11 -Wall -Wextra -Wpedantic -Werror -O2 -pthread -Iinclude
+threads=4
+operations_per_thread=10000
+operation_mix=50/40/10 lookup/update/insert
+distributions=uniform over 512 existing keys; skew80_20 routes 80% of lookup/update accesses to 20% (102) hot keys and 20% to remaining 410 keys
+warm_up_policy=one run per strategy per distribution, excluded from CSV
+measured_pairs_per_distribution=5
+pair_order=mutex_then_opal; opal_then_mutex; mutex_then_opal; opal_then_mutex; mutex_then_opal, repeated per distribution
+timer_scope=tree initialization excluded; worker creation and join included; post-run verification excluded
+script=benchmarks/run_opal_bptree_hotkey_comparison.sh

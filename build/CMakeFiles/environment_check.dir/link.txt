@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/environment_check.dir/src/environment_check.c.o -o environment_check 

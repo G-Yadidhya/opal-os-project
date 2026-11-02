@@ -1,0 +1,21 @@
+timestamp_local=2026-10-28 23:21:22 IST
+timestamp_utc=2026-10-28 17:51:22 UTC
+os=Ubuntu 24.04.4 LTS
+kernel=Linux 7.0.0-34-generic x86_64 GNU/Linux
+cpu_details:
+CPU(s)=28
+Model name=Intel(R) Core(TM) i7-14700
+Thread(s) per core=2
+Core(s) per socket=20
+Socket(s)=1
+logical_cpu_count=28
+compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+binary_build_flags=unknown; pre-existing executable
+thread_counts=1 2 4 8 16
+operations_per_thread=10000
+workload_mix=80/15/5 lookup/update/insert
+warmups=one per strategy and thread count; excluded
+measured_pairs=5 per strategy and thread count
+pair_order=mutex_then_opal; opal_then_mutex; alternating
+timer=tree initialization and validation excluded; includes worker create/join
+script=benchmarks/run_opal_bptree_thread_scaling.sh

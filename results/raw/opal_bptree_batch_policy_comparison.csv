@@ -1,0 +1,11 @@
+pair,order,policy,run,update_callbacks,update_batches,singleton_batches,max_batch_size,bucket_1,bucket_2,bucket_3_4,bucket_5_8,bucket_9_plus,update_latency_median_ns,update_latency_p95_ns,elapsed_seconds,throughput_ops_sec
+1,immediate_then_collect1us,immediate,1,16000,10893,7314,4,7314,2223,1356,0,0,5438,17922,0.038132710,1048968.20
+1,immediate_then_collect1us,collect1us,1,16000,9952,5581,4,5581,2861,1510,0,0,5062,17760,0.039258432,1018889.39
+2,collect1us_then_immediate,collect1us,2,16000,10403,5976,4,5976,3356,1071,0,0,4312,16558,0.035151688,1137925.44
+2,collect1us_then_immediate,immediate,2,16000,11590,8292,4,8292,2302,996,0,0,4891,18387,0.037820282,1057633.57
+3,immediate_then_collect1us,immediate,3,16000,11373,7889,4,7889,2468,1016,0,0,4782,18101,0.038730006,1032790.96
+3,immediate_then_collect1us,collect1us,3,16000,10506,6226,4,6226,3188,1092,0,0,4040,16377,0.034280224,1166853.52
+4,collect1us_then_immediate,collect1us,4,16000,10074,5667,4,5667,3041,1366,0,0,4397,16467,0.034014453,1175970.70
+4,collect1us_then_immediate,immediate,4,16000,11432,8036,4,8036,2363,1033,0,0,4638,17685,0.037918263,1054900.64
+5,immediate_then_collect1us,immediate,5,16000,11276,7781,4,7781,2380,1115,0,0,5092,18205,0.040437148,989189.45
+5,immediate_then_collect1us,collect1us,5,16000,10093,5802,4,5802,2828,1463,0,0,4948,18327,0.036500727,1095868.58

@@ -1,0 +1,16 @@
+pair,order,mode,run,readers,writers,successful_reads,read_retries,invalid_snapshots,updates,total_operations,elapsed_seconds,throughput_ops_sec
+1,optimistic_hybrid_mutex,optimistic_spin,1,4,2,800000,2496743,0,200000,1000000,0.248739,4020273.24
+1,optimistic_hybrid_mutex,optimistic_reader_mutex_writer,1,4,2,800000,164655,0,200000,1000000,0.134637,7427404.95
+1,optimistic_hybrid_mutex,mutex,1,4,2,800000,0,0,200000,1000000,0.185800,5382144.19
+2,mutex_hybrid_optimistic,mutex,2,4,2,800000,0,0,200000,1000000,0.197612,5060410.42
+2,mutex_hybrid_optimistic,optimistic_reader_mutex_writer,2,4,2,800000,209367,0,200000,1000000,0.147382,6785094.80
+2,mutex_hybrid_optimistic,optimistic_spin,2,4,2,800000,1648435,0,200000,1000000,0.210999,4739361.47
+3,hybrid_optimistic_mutex,optimistic_reader_mutex_writer,3,4,2,800000,190588,0,200000,1000000,0.134565,7431344.37
+3,hybrid_optimistic_mutex,optimistic_spin,3,4,2,800000,2509981,0,200000,1000000,0.227188,4401643.33
+3,hybrid_optimistic_mutex,mutex,3,4,2,800000,0,0,200000,1000000,0.196964,5077080.31
+4,optimistic_mutex_hybrid,optimistic_spin,4,4,2,800000,1983247,0,200000,1000000,0.295995,3378433.21
+4,optimistic_mutex_hybrid,mutex,4,4,2,800000,0,0,200000,1000000,0.199062,5023559.69
+4,optimistic_mutex_hybrid,optimistic_reader_mutex_writer,4,4,2,800000,199301,0,200000,1000000,0.145169,6888513.45
+5,mutex_optimistic_hybrid,mutex,5,4,2,800000,0,0,200000,1000000,0.203262,4919754.62
+5,mutex_optimistic_hybrid,optimistic_spin,5,4,2,800000,1753395,0,200000,1000000,0.285141,3507031.10
+5,mutex_optimistic_hybrid,optimistic_reader_mutex_writer,5,4,2,800000,183565,0,200000,1000000,0.138801,7204576.38

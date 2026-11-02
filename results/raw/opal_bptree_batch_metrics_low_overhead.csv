@@ -1,0 +1,11 @@
+pair,order,mode,run,update_callbacks,update_batches,singleton_batches,max_batch_size,bucket_1,bucket_2,bucket_3_4,bucket_5_8,bucket_9_plus,elapsed_seconds,throughput_ops_sec
+1,mutex_then_opal,mutex,1,16000,0,0,0,0,0,0,0,0,0.045927941,870929.53
+1,mutex_then_opal,opal,1,16000,11548,8257,4,8257,2222,1069,0,0,0.040678893,983310.93
+2,opal_then_mutex,opal,2,16000,11753,8603,4,8603,2147,1003,0,0,0.042440023,942506.56
+2,opal_then_mutex,mutex,2,16000,0,0,0,0,0,0,0,0,0.046072738,868192.38
+3,mutex_then_opal,mutex,3,16000,0,0,0,0,0,0,0,0,0.043547066,918546.38
+3,mutex_then_opal,opal,3,16000,11231,7819,4,7819,2200,1212,0,0,0.039811650,1004731.03
+4,opal_then_mutex,opal,4,16000,11912,8859,4,8859,2111,942,0,0,0.038596134,1036373.23
+4,opal_then_mutex,mutex,4,16000,0,0,0,0,0,0,0,0,0.043608530,917251.74
+5,mutex_then_opal,mutex,5,16000,0,0,0,0,0,0,0,0,0.044903046,890808.16
+5,mutex_then_opal,opal,5,16000,11433,8139,4,8139,2162,1132,0,0,0.039112280,1022696.71

@@ -1,0 +1,11 @@
+pair,order,mode,run,readers,writers,successful_reads,read_retries,invalid_snapshots,updates,total_operations,elapsed_seconds,throughput_ops_sec
+1,optimistic_then_mutex,optimistic,1,4,1,800000,1096126,0,100000,900000,0.164825,5460326.32
+1,optimistic_then_mutex,mutex,1,4,1,800000,0,0,100000,900000,0.186672,4821280.00
+2,mutex_then_optimistic,mutex,2,4,1,800000,0,0,100000,900000,0.163849,5492873.66
+2,mutex_then_optimistic,optimistic,2,4,1,800000,1061338,0,100000,900000,0.159105,5656652.22
+3,optimistic_then_mutex,optimistic,3,4,1,800000,776706,0,100000,900000,0.143645,6265452.96
+3,optimistic_then_mutex,mutex,3,4,1,800000,0,0,100000,900000,0.188514,4774171.50
+4,mutex_then_optimistic,mutex,4,4,1,800000,0,0,100000,900000,0.170227,5287056.41
+4,mutex_then_optimistic,optimistic,4,4,1,800000,1033527,0,100000,900000,0.175644,5123995.13
+5,optimistic_then_mutex,optimistic,5,4,1,800000,960929,0,100000,900000,0.154537,5823860.18
+5,optimistic_then_mutex,mutex,5,4,1,800000,0,0,100000,900000,0.189038,4760953.93

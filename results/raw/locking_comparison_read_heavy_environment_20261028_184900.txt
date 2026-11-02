@@ -1,0 +1,24 @@
+timestamp_local=2026-10-28 18:49:01 IST
+timestamp_utc=2026-10-28 13:19:01 UTC
+operating_system=PRETTY_NAME=Ubuntu 24.04.4 LTS;NAME=Ubuntu;VERSION=24.04.4 LTS (Noble Numbat)
+kernel=Linux 7.0.0-34-generic x86_64 GNU/Linux
+cpu_details:
+Architecture=x86_64
+Vendor ID=GenuineIntel
+Model name=Intel(R) Core(TM) i7-14700
+CPU family=6
+Model=183
+Thread(s) per core=2
+Core(s) per socket=20
+Socket(s)=1
+CPU max MHz=5400.0000
+CPU min MHz=800.0000
+logical_cpu_count=28
+compiler=gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+compiler_flags=existing executables used; build flags are not recoverable; suggested build: -std=c11 -Wall -Wextra -O2 -pthread
+workload=read-heavy,readers:4,writers:1,reader_iterations:200000,writer_iterations:100000,reads:800000,updates:100000,total_operations:900000
+warm_up_policy=one run per mode (optimistic then mutex), excluded from CSV
+measured_runs_per_mode=5
+measured_order=optimistic,mutex; mutex,optimistic; optimistic,mutex; mutex,optimistic; optimistic,mutex
+timer_scope=benchmark timer includes thread creation and join overhead
+script=benchmarks/run_locking_comparison_read_heavy.sh

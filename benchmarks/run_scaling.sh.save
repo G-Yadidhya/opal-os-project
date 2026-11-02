@@ -1,0 +1,99 @@
+
+
+```bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Move to the project root directory
+cd "$(dirname "$0")/.."
+
+# Program and output file
+PROGRAM="./thread_scaling"
+OUTPUT="results/raw/thread_scaling.csv"
+
+# Create output directory if it does not exist
+mkdir -p results/raw
+
+# Check whether the benchmark program exists
+if [[ ! -x "$PROGRAM" ]]; then
+    echo "Error: $PROGRAM not found or not executable."
+    echo "Compile it first using:"
+    echo "gcc -std=c11 -Wall -Wextra -Wpedantic -O2 src/thread_scaling.c -o thread_scaling -pthread"
+    exit 1
+fi
+
+# Write the CSV header
+echo "threads,run,operations,elapsed_seconds,throughput_ops_sec" > "$OUTPUT"
+
+# Benchmark configuration
+THREAD_COUNTS=(1 2 4 8)
+RUNS=5
+
+# Execute benchmark runs
+for threads in "${THREAD_COUNTS[@]}"; do
+    for run in $(seq 1 "$RUNS"); do
+
+        echo "Running: threads=$threads, run=$run"
+
+        # Execute benchmark and capture its output
+        output=$("$PROGRAM" "$threads")
+
+        # Extract expected counter
+        expected=$(printf '%s\n' "$output" |
+            awk '/Expected counter:/ {print $3}')
+
+        # Extract actual counter
+        actual=$(printf '%s\n' "$output" |
+            awk '/Actual counter:/ {print $3}')
+
+        # Extract elapsed time
+        elapsed=$(printf '%s\n' "$output" |
+            awk '/Elapsed time:/ {print $3}')
+
+        # Validate benchmark output
+        if [[ -z "$expected" || -z "$actual" || -z "$elapsed" ]]; then
+            echo "Error: Could not parse benchmark output."
+            printf '%s\n' "$output"
+            exit 1
+        fi
+
+        # Verify counter correctness
+        if [[ "$expected" != "$actual" ]]; then
+            echo "Error: Incorrect counter for $threads threads."
+            echo "Expected: $expected"
+            echo "Actual:   $actual"
+            exit 1
+        fi
+
+        # Calculate throughput without Python
+        throughput=$(awk -v operations="$actual" -v elapsed="$elapsed" \
+            'BEGIN {
+                if (elapsed > 0)
+                    printf "%.2f", operations / elapsed
+                else
+                    print "ERROR"
+            }')
+
+        # Reject invalid elapsed times
+        if [[ "$throughput" == "ERROR" ]]; then
+            echo "Error: Invalid elapsed time: $elapsed"
+            exit 1
+        fi
+
+        # Save the measurement to CSV
+        printf '%s,%s,%s,%s,%s\n' \
+            "$threads" "$run" "$actual" "$elapsed" "$throughput" \
+            >> "$OUTPUT"
+
+        echo "  Counter: $actual"
+        echo "  Elapsed: $elapsed seconds"
+        echo "  Throughput: $throughput ops/s"
+        echo
+
+    done
+done
+
+echo "Benchmark complete."
+echo "Results saved to $OUTPUT"
+```
